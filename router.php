@@ -1,10 +1,15 @@
 <?php
 
+/* Bootstrap the application. */
+
 include 'Http/Request.php';
-include 'api.php';
+include 'App/Api.php';
+include 'App/CountriesController.php';
+
+/* Route the request. */
 
 use Http\Request;
-
+use App\API;
 
 $request = Request::Init();
 
@@ -18,7 +23,9 @@ else if (preg_match('/\.(?:png|css|html|js)$/', $request->uri) && file_exists(__
 } 
 else if (strpos ( $request->uri , "." ) === false)
 { 
-    $apiResponse = API::GetResponse($request);
+    $api = new API();
+    
+    $apiResponse = $api->getResponse($request);
     
     header('Content-type: application/json');
     echo $apiResponse;

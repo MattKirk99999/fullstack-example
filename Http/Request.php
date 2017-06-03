@@ -2,7 +2,7 @@
 
 namespace Http;
 
-class Request 
+class Request
 {
     public $uri;
     public $input;
