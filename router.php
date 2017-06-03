@@ -1,20 +1,24 @@
 <?php
 
-require "api.php";
+include 'Http/Request.php';
+include 'api.php';
 
-$requestUri = filter_input(INPUT_SERVER, 'REQUEST_URI', FILTER_SANITIZE_URL);
+use Http\Request;
 
-if ($requestUri === "/")
+
+$request = Request::Init();
+
+if ($request->uri === "/")
 {
     return false;
 }
-else if (preg_match('/\.(?:png|css|html|js)$/', $requestUri) && file_exists(__DIR__ . $requestUri)) 
+else if (preg_match('/\.(?:png|css|html|js)$/', $request->uri) && file_exists(__DIR__ . $request->uri)) 
 {
     return false;
 } 
-else if (strpos ( $requestUri , "." ) === false)
+else if (strpos ( $request->uri , "." ) === false)
 { 
-    $apiResponse = API::GetResponse($requestUri);
+    $apiResponse = API::GetResponse($request);
     
     header('Content-type: application/json');
     echo $apiResponse;

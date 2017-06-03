@@ -1,12 +1,14 @@
 <?php
 
+use Http\Request;
+
 class API
 {
-    public static function GetResponse($requestUri)
+    public static function GetResponse(Request $request)
     {       
-        switch ($requestUri)
+        switch ($request->uri)
         {
-            case self::strBeginsWith($requestUri, "/api/v1/country"):
+            case self::strBeginsWith($request->uri, "/api/v1/country"):
                 $url = "https://restcountries.eu/rest/v1/all/";
                 
                 $ch = curl_init($url);
@@ -21,14 +23,16 @@ class API
                 {
                     self::log(curl_error($ch));
                     
-                    return json_encode(["error"=>"API had trouble with your request.", "request"=>$requestUri]);
+                    return json_encode(["error"=>"API had trouble with your request.", "request"=>$request->uri]);
                 }
                 else
                 {
                     return $result;
                 }
+            case self::strBeginsWith($request->uri, "/api/v1/test"):
+                return json_encode( $request->input );
             default:
-                return json_encode(["error"=>"API route not found.", "request"=>$requestUri]);
+                return json_encode(["error"=>"API route not found.", "request"=>$request->uri]);
         }
     }
     
