@@ -13,8 +13,25 @@
         <div class="content-area">
             <h2>Search for countries by name, full name, or code.</h2>
             <form id="search">
-                <input type="text" name="search-input" placeholder="name, full name, or code" />
-                <button type="submit">Search</button>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="radio" name="type" value="name" checked> Name
+                        </td>
+                        <td>
+                            <input type="radio" name="type" value="fullname"> Full name
+                        </td>
+                        <td>
+                            <input type="radio" name="type" value="code"> Code
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <input type="text" name="query" placeholder="name, full name, or code" />
+                            <button type="submit">Search</button>
+                        </td>
+                    </tr>
+                </table>
             </form>
         </div>
     </body>

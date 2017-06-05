@@ -18,8 +18,12 @@ class API
     {       
         switch ($request->uri)
         {
-            case self::strBeginsWith($request->uri, "/api/v1/country"):
-                return json_encode ( $this->controller->getCountries($request) );
+            case self::strBeginsWith($request->uri, "/api/v1/country/name"):
+                return json_encode ( $this->controller->getCountriesByName($request) );
+            case self::strBeginsWith($request->uri, "/api/v1/country/fullname"):
+                return json_encode ( $this->controller->getCountriesByFullName($request) );
+            case self::strBeginsWith($request->uri, "/api/v1/country/code"):
+                return json_encode ( $this->controller->getCountriesByCode($request) );
             case self::strBeginsWith($request->uri, "/api/v1/test"):
                 return json_encode( $request->input );
             default:

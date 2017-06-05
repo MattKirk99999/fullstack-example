@@ -19,6 +19,21 @@ class Request
     public function __construct($uri, $input) 
     {
         $this->uri = $uri;
-        $this->input = $input;
+        $this->input = $input === null? array() : $input;
+    }
+    
+    public function getInputs()
+    {
+        $ret = array();
+
+        $args = func_get_args();
+
+        foreach ($args as $key)
+        {
+            $ret[$key] = (array_key_exists($key, $this->input)) ? 
+                    $this->input[$key] : null;
+        }
+        
+        return $ret;
     }
 }

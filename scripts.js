@@ -1,25 +1,47 @@
-$(function() 
+$(function()
 {
-    $('form#search').on("submit",function(e) 
+    $('form#search').on("submit",function(e)
     {
         e.preventDefault();
 
-        var inputs = $(this).serializeArray();
+        var inputs = getFormInputs(this);
 
-        inputs[0].value;
-        
-        $.post( "/api/v1/test", inputs)
-        .done(function( data ) 
+        if (inputs.query.length === 0) return invalidInput();
+
+        $.post( "/api/v1/country/" + inputs.type, inputs)
+        .done(function( data )
         {
             console.log( data );
         })
-        .fail(function() 
+        .fail(function(msg)
         {
-            console.log( "error" );
+            console.log( msg );
         })
-        .always(function() 
+        .always(function()
         {
             console.log( "finished" );
         });
     });
+
+    function getFormInputs(form)
+    {
+        var inputs = {};
+
+        $(form).serializeArray().forEach(function(input)
+        {
+            inputs[input.name] = input.value;
+        });
+
+        return inputs;
+    }
+
+    function invalidInput()
+    {
+        return invalid("Enter some text and try again!");
+    }
+
+    function invalid(msg)
+    {
+        return "Error: " + msg;
+    }
 });
