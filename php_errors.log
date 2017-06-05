@@ -5,3 +5,93 @@
 [05-Jun-2017 00:09:34 UTC] PHP Warning:  curl_getinfo() expects parameter 1 to be resource, null given in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 99
 [05-Jun-2017 00:09:34 UTC] PHP Warning:  curl_close() expects parameter 1 to be resource, null given in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 100
 [05-Jun-2017 00:12:50 UTC] PHP Warning:  json_decode() expects parameter 1 to be string, array given in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 116
+[05-Jun-2017 00:34:11 UTC] PHP Fatal error:  Uncaught Error: Call to undefined method App\CountriesController::restCountriesEuService() in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:20
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 20
+[05-Jun-2017 00:35:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:20
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 20
+[05-Jun-2017 00:37:13 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:37:47 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:39:37 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:39:41 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:39:42 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:39:43 UTC] PHP Fatal error:  Uncaught Error: Class 'App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:39:57 UTC] PHP Fatal error:  Uncaught Error: Class 'App\App\RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:40:10 UTC] PHP Fatal error:  Uncaught Error: Class 'RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:40:11 UTC] PHP Fatal error:  Uncaught Error: Class 'RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:40:11 UTC] PHP Fatal error:  Uncaught Error: Class 'RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:40:12 UTC] PHP Fatal error:  Uncaught Error: Class 'RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:40:12 UTC] PHP Fatal error:  Uncaught Error: Class 'RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 00:40:13 UTC] PHP Fatal error:  Uncaught Error: Class 'RestCountriesEuService' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:22
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(22): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22

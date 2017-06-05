@@ -5,6 +5,7 @@
 include 'Http/Request.php';
 include 'App/Api.php';
 include 'App/CountriesController.php';
+include 'App/RestCountriesEuService.php';
 
 /* Route the request. */
 
