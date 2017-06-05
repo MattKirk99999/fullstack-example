@@ -95,3 +95,34 @@ Stack trace:
 #1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(28): App\API->getResponse(Object(Http\Request))
 #2 {main}
   thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 22
+[05-Jun-2017 01:08:22 UTC] PHP Fatal error:  Uncaught Exception: Trouble parsing query. in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\RestCountriesEuService.php:56
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\RestCountriesEuService.php(18): App\RestCountriesEuService->restCountriesEuService()
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php(55): App\RestCountriesEuService->execute()
+#2 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(28): App\CountriesController->getCountriesByCode(Object(Http\Request))
+#3 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(29): App\API->getResponse(Object(Http\Request))
+#4 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\RestCountriesEuService.php on line 56
+[05-Jun-2017 02:49:48 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Exception' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php:32
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(29): App\API->getResponse(Object(Http\Request))
+#1 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php on line 32
+[05-Jun-2017 02:49:50 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Exception' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:17
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(24): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(29): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 17
+[05-Jun-2017 02:50:39 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Exception' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:17
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(24): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(29): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 17
+[05-Jun-2017 02:50:40 UTC] PHP Fatal error:  Uncaught Error: Class 'App\Exception' not found in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php:17
+Stack trace:
+#0 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\Api.php(24): App\CountriesController->getCountriesByName(Object(Http\Request))
+#1 C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\router.php(29): App\API->getResponse(Object(Http\Request))
+#2 {main}
+  thrown in C:\Users\mkirk.FND\Documents\Boxes\CountriesList\source\App\CountriesController.php on line 17

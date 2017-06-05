@@ -22,7 +22,7 @@ class RestCountriesEuService
     {
         // Configure our request.
         
-        $baseUrl = "https://restcountries.eu/rest/v1/";
+        $baseUrl = "https://restcountries.eu/rest/v2/";
         
         $options = "";
         

@@ -14,20 +14,12 @@ class CountriesController
         
         if ($query === null) 
         {
-            return ["error"=>"No query entered.", "request"=>$request->uri, "input"=>$request->input];
+            throw new \Exception("No query entered.");
         }
         
-        try
-        {
-            $service = new RestCountriesEuService("name", $query, false);
-            $result = $service->execute();
-        }
-        catch(\Exception $e)
-        {
-            return ["error"=>"The API had trouble with your request.", "request"=>$request->uri, "details"=>$e->getMessage()];
-        }
+        $result = (new RestCountriesEuService("name", $query, false))->execute();
 
-        return $result;
+        return $this->sortAndPrune( $result );
     }
     
     public function getCountriesByFullName($request)
@@ -38,20 +30,12 @@ class CountriesController
         
         if ($query === null) 
         {
-            return ["error"=>"No query entered.", "request"=>$request->uri, "input"=>$request->input];
-        }
-        
-        try
-        {
-            $service = new RestCountriesEuService("name", $query, true);
-            $result = $service->execute();
-        }
-        catch(\Exception $e)
-        {
-            return ["error"=>"The API had trouble with your request.", "request"=>$request->uri, "details"=>$e->getMessage()];
+            throw new \Exception("No query entered.");
         }
 
-        return $result;
+        $result = (new RestCountriesEuService("name", $query, true))->execute();
+
+        return $this->sortAndPrune( $result );
     }
     
     public function getCountriesByCode($request)
@@ -62,19 +46,38 @@ class CountriesController
         
         if ($query === null) 
         {
-            return ["error"=>"No query entered.", "request"=>$request->uri, "input"=>$request->input];
-        }
-        
-        try
-        {
-            $service = new RestCountriesEuService("alpha", $query, false);
-            $result = $service->execute();
-        }
-        catch(\Exception $e)
-        {
-            return ["error"=>"The API had trouble with your request.", "request"=>$request->uri, "details"=>$e->getMessage()];
+            throw new \Exception("No query entered.");
         }
 
-        return array($result);
+        $result = (new RestCountriesEuService("alpha", $query, false))->execute();
+        
+        if ($result === array()) return $this->sortAndPrune( $result ); // handles odd corner-case.
+        
+        return $this->sortAndPrune(array($result));
+    }
+    
+    private function sortAndPrune($countries, $maxSize = 50)
+    {
+        $size = min(count($countries), $maxSize);
+        
+        for( $i = 0; $i < $size; $i++)
+        {
+            $currCountry = $countries[$i];
+            $currCountryName = strtolower($currCountry->name);
+            $j = $i-1;
+            
+            while($j >= 0 && (
+                     strtolower($countries[$j]->name) > $currCountryName
+                    || (strtolower($countries[$j]->name) === $currCountryName
+                             && $countries[$j]->population > $currCountry->population)))
+            {
+                $countries[$j+1] = $countries[$j];
+                $j--;
+            }
+            
+            $countries[$j+1] = $currCountry;
+        }
+
+        return array_splice($countries, 0, $size);
     }
 }
