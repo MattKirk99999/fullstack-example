@@ -3,6 +3,7 @@
 body
 {
     margin: 0;
+    padding: 0;
 }
 
 div.content-area
@@ -30,11 +31,20 @@ div.output-area
     margin-top: 22px;
     margin-left: 8px;
     padding-left: 16px;
-    min-height: 300px;
+    min-height: 400px;
     border-left: 12px solid #EEEEEE;
 }
 
 div.output-area div#notices
 {
     padding-bottom: 16px;
+}
+
+div.footer
+{
+    margin-top: 50px;
+    min-height: 100px;
+    background-color: #999999;
+    padding-bottom: 0;
+    margin-bottom: 0;
 }

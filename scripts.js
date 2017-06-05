@@ -70,6 +70,107 @@ $(function()
     {
         $('div.output-area div#results').html('');
 
+        $('div.output-area div#results').append(getCountriesAsTable(countries));
+
+        $('div.output-area div#results').append(getSearchStatsAsTable(countries));
+
+        console.log(countries);
+    }
+
+    function getSearchStatsAsTable(countries)
+    {
+        var table = $("<table></table>");
+
+        table.append(getStatsTitleAsRow());
+        table.append(getTotalCountAsRow(countries));
+        table.append(getRegionsCountAsRow(countries));
+        table.append(getSubRegionsCountAsRow(countries));
+
+        return table;
+    }
+
+    function getRegionsCountAsRow(countries)
+    {
+        var row = $("<tr></tr>");
+        row.append($("<td><i>" + "Regions in search:" + "</i></td>"));
+
+        var regions = getAttributeCount(countries, 'region');
+
+        var contentCell = $("<td></td>");
+        contentCell.append(_getRegionsCountAsRow_getContentAsTable(regions));
+        row.append(contentCell);
+        return row;
+    }
+
+    function getSubRegionsCountAsRow(countries)
+    {
+        var row = $("<tr></tr>");
+        row.append($("<td><i>" + "Subregions in search:" + "</i></td>"));
+
+        var regions = getAttributeCount(countries, 'subregion');
+
+        var contentCell = $("<td></td>");
+        contentCell.append(_getRegionsCountAsRow_getContentAsTable(regions));
+        row.append(contentCell);
+        return row;
+    }
+
+    function _getRegionsCountAsRow_getContentAsTable(regions)
+    {
+        var table = $("<table></table>");
+
+        for (var k in regions)
+        {
+            table.append(getRegionCountAsRown(k, regions[k]));
+        }
+
+        return table;
+    }
+
+    function getRegionCountAsRown(name, count)
+    {
+        var row = $("<tr></tr>");
+        row.append($("<td><b>" + name + "</b></td>"));
+        row.append($("<td>(" + count + ")</td>"));
+        return row;
+    }
+
+    function getAttributeCount(countries, attribute)
+    {
+        var regions = {};
+
+        countries.forEach(function(country)
+        {
+            if (regions[country[attribute]] === undefined)
+            {
+                regions[country[attribute]] = 0;
+            }
+
+            regions[country[attribute]]++;
+        });
+
+        return regions;
+    }
+
+    function getStatsTitleAsRow()
+    {
+        var row = $("<tr></tr>");
+        row.append($("<td colspan='2'><u><h3>" + "Search results" + "</h3></u></td>"));
+        return row;
+    }
+
+    function getTotalCountAsRow(countries)
+    {
+        var row = $("<tr></tr>");
+        row.append($("<td><i>" + "Total number of countries:" + "</i></td>"));
+        row.append($("<td>" + countries.length + "</td>"));
+        return row;
+    }
+
+    // TODO: Move all CountriesAsTable functionality to object.
+
+    function getCountriesAsTable(countries)
+    {
         var table = $("<table></table>");
 
         countries.forEach(function(country)
@@ -77,16 +178,7 @@ $(function()
             table.append(getCountryAsRow(country));
         });
 
-        $('div.output-area div#results').append(table);
-
-        $('div.output-area div#results').append(getSearchStats(countries));
-
-        console.log(countries);
-    }
-
-    function getSearchStats(countries)
-    {
-
+        return table;
     }
 
     function getCountryAsRow(country)
