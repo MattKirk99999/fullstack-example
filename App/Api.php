@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Http\Request;
-use App\CountriesController;
+use App\Http\Request;
+use App\Controllers\CountriesController;
 
 class API
 {

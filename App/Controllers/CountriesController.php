@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Controllers;
 
-use App\RestCountriesEuService;
+use App\Providers\RestCountriesEuService;
 
 class CountriesController 
 {

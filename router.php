@@ -2,14 +2,14 @@
 
 /* Bootstrap the application. */
 
-include 'Http/Request.php';
+include 'App/Http/Request.php';
 include 'App/Api.php';
-include 'App/CountriesController.php';
-include 'App/RestCountriesEuService.php';
+include 'App/Controllers/CountriesController.php';
+include 'App/Providers/RestCountriesEuService.php';
 
 /* Route the request. */
 
-use Http\Request;
+use App\Http\Request;
 use App\API;
 
 $request = Request::Init();
